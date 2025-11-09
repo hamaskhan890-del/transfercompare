@@ -1,0 +1,249 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0b74de;
+  --accent-2:#0f766e;
+  --best-grad-1:#7dd3fc;
+  --best-grad-2:#0ea5a9;
+  --kpi-bg:#f0f9ff;
+  --kpi-accent:#073b4c;
+  --radius:12px;
+  --shadow: 0 8px 30px rgba(12,23,52,0.08);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset / base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#f8fbff 0%,var(--bg) 100%);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:inherit;text-decoration:none}
+
+/* Topbar / header */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 20px;
+  max-width:1200px;
+  margin:12px auto;
+  background:transparent;
+}
+
+/* Brand (left) */
+.brand-left{display:flex;align-items:center;gap:12px}
+.brand-logo{width:44px;height:44px;flex:0 0 44px}
+.brand-text .title{font-weight:700;font-size:18px;color:#071744}
+.brand-text .subtitle{font-size:12px;color:var(--muted)}
+
+/* Controls container */
+.controls-left{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-left:20px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  padding:10px;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(12,23,52,0.04);
+}
+
+/* Inline group for From/To/Amount */
+.group-inline{display:flex;gap:10px;align-items:end}
+
+/* Field styles */
+.field{display:flex;flex-direction:column;font-size:13px;color:var(--muted)}
+.field.large select, .field.large input{
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid #e6eef8;
+  background:#fff;
+  min-width:160px;
+  font-size:16px;
+  box-shadow: 0 6px 20px rgba(12,23,52,0.05);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.field.amount.large input{min-width:140px;padding:12px 14px}
+.group-inline .field.amount.large input{min-width:140px}
+
+/* Buttons */
+.btn{padding:10px 14px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#0774c0);color:#fff;box-shadow:0 8px 28px rgba(11,116,222,0.12)}
+.btn.primary.large{padding:12px 18px;font-size:16px;border-radius:14px}
+
+/* Page container */
+.container{max-width:1200px;margin:18px auto;padding:0 20px}
+
+/* Hero */
+.hero{display:flex;gap:20px;align-items:stretch;margin-bottom:12px}
+.hero-left{flex:1}
+.hero-left h1{margin:0;font-size:22px;color:#071744}
+.hero-left .muted{margin-top:8px;color:var(--muted)}
+.hero-right-spacer{width:260px}
+
+/* Best-rate compact card */
+.best-row{max-width:1200px;margin:0 auto 12px;padding:0 20px}
+.best-rate-card{
+  border-radius:12px;
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow: 0 12px 30px rgba(6,30,41,0.08);
+  background: linear-gradient(90deg, var(--best-grad-1) 0%, var(--best-grad-2) 100%);
+  color:#012022;
+}
+.best-rate-card.compact{height:64px;padding:10px 14px}
+.best-left{display:flex;flex-direction:column}
+.best-heading{font-size:11px;font-weight:700;color:rgba(1,32,34,0.95);letter-spacing:0.6px}
+.best-provider{font-weight:800;font-size:15px}
+.best-right{display:flex;flex-direction:column;align-items:flex-end}
+.best-value{font-size:16px;font-weight:900}
+.best-sub{font-size:12px;color:rgba(1,32,34,0.85)}
+
+/* Filters */
+.filters{max-width:1200px;margin:0 auto 8px;padding:0 20px}
+.filter-row{display:flex;gap:12px;align-items:center}
+.filter-row label{font-size:13px;color:var(--muted);display:flex;flex-direction:column}
+.spacer{flex:1}
+
+/* Results grid (left shift preserved) */
+.results-grid{
+  width: calc(100% + 48px);
+  max-width:1200px;
+  margin:8px auto 0;
+  padding:0 20px 20px 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:16px;
+  margin-left: -24px;
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(12,23,52,0.12)}
+
+/* Head */
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.provider{display:flex;gap:12px;align-items:center}
+.logo-wrap{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:0 0 56px}
+.provider-name{font-weight:700;color:#071744}
+.provider-info{display:flex;flex-direction:column;gap:6px}
+
+/* Logo image rules */
+.logo-wrap img.provider-logo{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+  border-radius:10px;
+  background:transparent;
+  display:block;
+}
+.logo-wrap svg { width:56px; height:56px; display:block; }
+
+/* KPIs */
+.kpis{display:flex;gap:12px;align-items:center}
+.kpi{
+  background:linear-gradient(180deg,#ffffff,#f7fcff);
+  padding:10px 12px;
+  border-radius:12px;
+  min-width:100px;
+  text-align:center;
+  border:1px solid rgba(6,30,41,0.06);
+  box-shadow: 0 6px 16px rgba(6,30,41,0.04);
+}
+.kpi.receive{background:linear-gradient(180deg,#ecfdf5,#bbf7d0);border:1px solid rgba(16,185,129,0.12)}
+.kpi.fee{background:linear-gradient(180deg,#fff7ed,#ffe0b2);border:1px solid rgba(249,115,22,0.12)}
+.kpi .value{font-weight:800;font-size:14px;color:var(--kpi-accent)}
+.kpi .label{font-size:12px;color:var(--muted);margin-top:6px}
+
+/* Meta row and actions */
+.meta-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.small{font-size:13px;color:var(--muted)}
+.actions{display:flex;gap:8px;align-items:center}
+.link-btn{background:transparent;border:1px solid #e6eef8;padding:8px 10px;border-radius:10px;cursor:pointer}
+.primary-btn{background:linear-gradient(90deg,var(--accent-2),#0b74de);Color:#fff;padding:9px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+
+/* =========================
+   Star rating styles (no half-stars)
+   - smaller, tighter spacing
+   - colors: green high, orange mid, red low
+   ========================= */
+.star-rating{display:flex;align-items:center;gap:6px}
+
+/* remove default color so stars can inherit from container */
+.star{
+  width:14px;
+  height:14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  line-height:1;
+  position:relative;
+}
+
+/* base glyph */
+.star::before{
+  content: "★";
+  display:block;
+  width:100%;
+  height:100%;
+  text-align:center;
+  line-height:14px;
+  font-size:14px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* filled / empty explicit rules: filled uses currentColor (from container), empty uses light gray */
+.star[data-state="full"]::before {
+  color: currentColor;
+  -webkit-text-fill-color: currentColor;
+}
+.star[data-state="empty"]::before {
+  color: #e6e8eb;
+  -webkit-text-fill-color: #e6e8eb;
+}
+
+/* numeric label */
+.rating-label{font-weight:700;color:#071744;font-size:12px}
+
+/* color mapping: container classes supply the color */
+.stars-high{ color: #16a34a }   /* green */
+.stars-mid { color: #ff8c42 }   /* orange */
+.stars-low { color: #e03b3b }   /* red */
+
+/* smaller on narrow screens */
+@media (max-width:880px){
+  .star{width:12px;height:12px;font-size:12px}
+  .star::before{line-height:12px}
+  .rating-label{font-size:11px}
+}
+
+/* Responsive adjustments */
+@media (max-width:880px){
+  .topbar{flex-direction:column;align-items:flex-start;padding:12px}
+  .controls-left{order:2;margin:10px 0 0 0;width:100%;display:flex;flex-direction:column;gap:10px}
+  .group-inline{width:100%;display:flex;gap:8px;flex-wrap:wrap}
+  .group-inline .field.large{flex:1 1 140px}
+  .btn.primary.large{width:100%}
+  .hero-right-spacer{display:none}
+  .best-rate-card.compact{height:72px}
+
+  .results-grid{
+    width:100%;
+    margin-left:0;
+    padding:0 16px 20px 16px;
+    grid-template-columns:1fr;
+  }
+}

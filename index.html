@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TransferCompare — Elegant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-left">
+      <svg viewBox="0 0 48 48" class="brand-logo" aria-hidden>
+        <rect x="4" y="4" width="40" height="40" rx="8" fill="#0b74de"/>
+        <text x="24" y="30" text-anchor="middle" font-size="20" fill="#fff" font-family="Inter, sans-serif" font-weight="700">TC</text>
+      </svg>
+      <div class="brand-text">
+        <div class="title">TransferCompare</div>
+        <div class="subtitle">Find the best way to send money</div>
+      </div>
+    </div>
+
+    <div class="controls-left" id="controlsLeft" aria-label="Currency selection">
+      <div class="group-inline">
+        <label class="field large">
+          From
+          <select id="fromCurrency" aria-label="From currency"></select>
+        </label>
+        <label class="field large">
+          To
+          <select id="toCurrency" aria-label="To currency"></select>
+        </label>
+        <label class="field amount large">
+          Amount
+          <input id="amount" type="number" min="1" value="200" aria-label="Amount" />
+        </label>
+      </div>
+
+      <button id="compareBtn" class="btn primary large">Compare</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Compare live fees, rates and speed</h1>
+        <p class="muted">Instantly see how much your recipient will receive and choose the provider that fits your needs.</p>
+      </div>
+      <div class="hero-right-spacer"></div>
+    </section>
+
+    <section id="bestRow" class="best-row">
+      <aside id="summary" class="best-rate-card compact" aria-live="polite">
+        <div class="best-left">
+          <div class="best-heading">Best available</div>
+          <div class="best-provider">—</div>
+        </div>
+        <div class="best-right">
+          <div class="best-value">—</div>
+          <div class="best-sub">Rate & fee summary</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="filters">
+      <div class="filter-row">
+        <label>Sort
+          <select id="sortBy">
+            <option value="effective">Best receive</option>
+            <option value="fee">Lowest fee</option>
+            <option value="speed">Fastest</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </label>
+        <label>Max fee
+          <input id="maxFee" type="number" placeholder="Any" />
+        </label>
+        <div class="spacer"></div>
+      </div>
+    </section>
+
+    <section id="results" class="results-grid" aria-live="polite"></section>
+
+    <!-- Footer removed as requested -->
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
