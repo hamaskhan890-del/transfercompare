@@ -18,7 +18,7 @@ const providers = [
     rating: 4.8,
     initials: 'W',
     logo: 'logos/logos-wise',
-    url: 'https://wise.com',
+    url: 'https://wise.prf.hn/click/camref:1011l7uZ7',
     description: 'Low-cost international transfers with local payouts.',
     supportedSend: [
       'EUR','GBP','USD','AED','ARS','AUD','BGN','BRL','CAD','CHF','CLP','CNY','CZK','DKK',
